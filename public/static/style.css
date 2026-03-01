@@ -1,1 +1,367 @@
-h1 { font-family: Arial, Helvetica, sans-serif; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+
+/* WhatsApp Banner */
+.whatsapp-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.whatsapp-banner-text {
+  font-size: 14px;
+  font-weight: 500;
+  flex: 1;
+}
+
+.whatsapp-btn {
+  background: white;
+  color: #25D366;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+}
+
+.container {
+  max-width: 600px;
+  margin: 70px auto 0;
+  padding: 20px;
+}
+
+/* Install Banner */
+#installBanner {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: none;
+  align-items: center;
+  gap: 15px;
+}
+
+#installBanner button {
+  background: #1e40af;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Main Card */
+.main-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.page {
+  display: none;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: #1e40af;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Menu Items */
+.menu-grid {
+  display: grid;
+  gap: 15px;
+}
+
+.menu-item {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.menu-item i {
+  font-size: 24px;
+}
+
+/* Back Button */
+.back-btn {
+  background: #64748b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-btn:hover {
+  background: #475569;
+}
+
+/* Input Fields */
+.calc-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.calc-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.calc-input-inline {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.fenn-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Result Box */
+.result-box {
+  background: #f8fafc;
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 20px;
+  border: 2px solid #e2e8f0;
+}
+
+.status-box {
+  background: #fef3c7;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.status-box.success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-box.good {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status-box.average {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+.status-box.below {
+  background: #fed7aa;
+  color: #92400e;
+}
+
+.status-box.weak {
+  background: #fecaca;
+  color: #991b1b;
+}
+
+.status-box.fail {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* Info Button */
+#infoButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#infoText {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: none;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* List Styles */
+.list-item {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-left: 4px solid #667eea;
+}
+
+.list-item h3 {
+  color: #1e40af;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.list-item p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Link Items */
+.link-item {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.2s;
+}
+
+.link-item:hover {
+  transform: translateX(5px);
+}
+
+.link-item i {
+  font-size: 20px;
+}
+
+/* Page Titles */
+.page-title {
+  color: #1e40af;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section-title {
+  color: #475569;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .main-card {
+    padding: 20px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+  }
+  
+  .menu-item {
+    padding: 15px;
+    font-size: 14px;
+  }
+}
